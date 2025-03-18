@@ -36,7 +36,7 @@ def main_game(info_func=description):
         min_range = int(min_range)
         max_range = int(max_range)
     except:
-        print("invalid format type again")
+        print("invalid format! type again")
         main_game(pass_func)
     number = random.randint(min_range,max_range)
     player1_tries=game(number,min_range,max_range)

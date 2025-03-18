@@ -42,9 +42,9 @@ def word_chain_game():
 
 points = word_chain_game()
 print(f"Final points: Player 1 - {points[0]}, Player 2 - {points[1]}")
-
-'''
-This code does the following:
+def descripton():
+    _b = '''
+This description does the following:
 
 1. Randomly selects a player to start the game.
 2. Asks the current player to enter a word.
@@ -54,3 +54,4 @@ This code does the following:
 6. Switches the current player.
 7. Asks the new current player to enter a word starting with the last letter of the previous word.
 8. Returns a tuple containing the points for each player.'''
+    print(_b)

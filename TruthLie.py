@@ -2,6 +2,17 @@
 import random
 import os
 from basic_func import clear_screen
+def description():
+    print('''
+This game does the following:
+
+1. Randomly selects a player to write the sentences.
+2. Asks the selected player to input two truth sentences and one lie sentence.
+3. Clears the screen, shuffles the sentences, and labels them 1, 2, and 3.
+4. Asks the other player to guess the number of the lie sentence.
+5. Checks if the guess is correct and awards points accordingly.
+6. Returns a tuple containing the points for each player.''')
+
 
 def game():
     players = ['Player1', 'Player2']
@@ -51,12 +62,3 @@ def game():
 #points = game()
 #print(f"Final points: Player 1 - {points[0]}, Player 2 - {points[1]}")
 
-'''
-This code does the following:
-
-1. Randomly selects a player to write the sentences.
-2. Asks the selected player to input two truth sentences and one lie sentence.
-3. Clears the screen, shuffles the sentences, and labels them 1, 2, and 3.
-4. Asks the other player to guess the number of the lie sentence.
-5. Checks if the guess is correct and awards points accordingly.
-6. Returns a tuple containing the points for each player.'''
