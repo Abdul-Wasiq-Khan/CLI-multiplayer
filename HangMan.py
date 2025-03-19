@@ -129,5 +129,5 @@ def hangman_game():
         return (2, 0)  # Player 1 wins
 
 # Run the game
-points = hangman_game()
-print(f"\nFinal Points: Player 1 - {points[0]}, Player 2 - {points[1]}")
+#points = hangman_game()
+#print(f"\nFinal Points: Player 1 - {points[0]}, Player 2 - {points[1]}")

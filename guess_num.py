@@ -1,6 +1,8 @@
 import random
 import keyboard
-import basic_func as func
+import os
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
 def pass_func():
     pass
 
@@ -42,7 +44,7 @@ def main_game(info_func=description):
     player1_tries=game(number,min_range,max_range)
     if mode == 'd':
         number = random.randint(min_range,max_range)
-    func.clear_screen()
+    clear_screen()
     player2_tries=game(number,min_range,max_range)
 
     if player1_tries > player2_tries:

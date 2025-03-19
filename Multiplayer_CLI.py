@@ -2,10 +2,10 @@ player1_points = []
 player2_points = []
 p1_total = 0
 p2_total =0
-games =[]
+games = []
 reactions = ["⚆_⚆", "🫡", "😊", "😁", "😀", "😎", "🤨", ";D", "(⓿_⓿)", "^_^", "><", "(^_^)", "⊙﹏⊙∥"]
 import guess_num
-import basic_func
+
 import TruthLie 
 import WordChain
 import Unscrambe
@@ -31,15 +31,19 @@ Games:
 >
 '''
 
-def take_games():
+def take_games(extra_text=''):
     try:
-        games = eval(input(a))
-        games = [int(i) for i in games]
-        return games
+        global games
+        games = eval(input(a+extra_text))
+        count = 0
+        for i in range(len(games)):
+            games[i] = int(games[i]) 
     except:
-        print('Invalid input. Please enter a valid list of integers.')
-        take_games()
+        
+         take_games('invalid pls retype it>')
+    print(games)
 take_games()
+
 
 def output_marks():
     global p1_total, p2_total
@@ -60,22 +64,22 @@ def appending_points(mytuple=(0,0)):
     p2_total += p2
 
 def next_game():
-    print(reactions[random.randint(0,len(reactions))])
+    print(reactions[random.randint(0,len(reactions)-1)])
     print('input anything to start next game')
     input('>')
     
 game_dict={
-   0 : lambda: (0,0),
-   1 : guess_num.main_game(),
-   2 : HangMan.hangman_game(),
-   5 : TruthLie.game(),
-   6 : ConnectFour.play_game(),
-   7 : WordChain.word_chain_game(),
-   8 : Unscrambe.scrambled_word_game()
+   0 : 0+0,
+   1 : guess_num.main_game,
+   2 : HangMan.hangman_game,
+   5 : TruthLie.game,
+   6 : ConnectFour.play_game,
+   7 : WordChain.word_chain_game,
+   8 : Unscrambe.scrambled_word_game
 }
 
-for i in games:
-    appending_points(eval(game_dict.get(i,lambda: (0,0))))
+for v in range(len(games)):
+    appending_points(game_dict.get(games[v], lambda: (0,0))())
     next_game()
 output_marks()
 

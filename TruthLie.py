@@ -1,7 +1,11 @@
-
 import random
 import os
-from basic_func import clear_screen
+def clear_screen():
+    # Check the operating system and clear the terminal accordingly
+    if os.name == 'nt':  # For Windows
+        os.system('cls')
+    else:  # For Linux/Mac
+        os.system('clear')
 def description():
     print('''
 This game does the following:

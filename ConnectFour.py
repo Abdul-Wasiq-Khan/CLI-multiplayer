@@ -74,14 +74,16 @@ def play_game():
 
     return tuple(points)
 
-points = play_game()
-print(f"Final points: Player 1 - {points[0]}, Player 2 - {points[1]}")
+#points = play_game()
+#print(f"Final points: Player 1 - {points[0]}, Player 2 - {points[1]}")
+def description():
+    print(
 '''
-This code does the following:
+This game does the following:
 
 1. Initializes a Connect 4 game board and randomly selects the first player.
 2. Prints the game board and asks the current player to enter the column number to drop their piece.
 3. Checks if the move is valid and makes the move.
 4. Checks if the current player has won.
 5. Switches the players and repeats the process until one player wins.
-6. Returns a tuple containing the points for each player.'''
+6. Returns a tuple containing the points for each player.''')

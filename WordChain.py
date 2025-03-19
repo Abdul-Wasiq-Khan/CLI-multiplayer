@@ -40,8 +40,8 @@ def word_chain_game():
         last_letter = word[-1]
         print(f"\n{current_player}'s turn: Enter a word starting with '{last_letter}':")
 
-points = word_chain_game()
-print(f"Final points: Player 1 - {points[0]}, Player 2 - {points[1]}")
+#points = word_chain_game()
+#print(f"Final points: Player 1 - {points[0]}, Player 2 - {points[1]}")
 def descripton():
     _b = '''
 This description does the following:

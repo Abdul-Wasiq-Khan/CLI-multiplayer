@@ -1,7 +1,9 @@
 
 import random
 import time
-import basic_func 
+import os
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def scramble_word(word):
     scrambled_word = list(word)
@@ -25,7 +27,7 @@ def scrambled_word_game():
         word = input(f"\n{current_player}, enter a word: ")
         scrambled_word = scramble_word(word)
 
-        basic_func.clear_screen()
+        clear_screen()
         print(f"\n{other_player}'s turn: Unscramble the word '{scrambled_word}':")
         start_time = time.time()
         answer = input("Enter your answer: ")
@@ -48,8 +50,8 @@ def scrambled_word_game():
 
     return tuple(points)
 
-points = scrambled_word_game()
-print(f"Final points: Player 1 - {points[0]}, Player 2 - {points[1]}")
+#points = scrambled_word_game()
+#print(f"Final points: Player 1 - {points[0]}, Player 2 - {points[1]}")
 def description():
     b ='''
     
