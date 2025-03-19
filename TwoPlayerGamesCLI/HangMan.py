@@ -74,6 +74,7 @@ def display_hangman(attempts):
 def hangman_game():
     # Player 1 provides the word
     clear_screen()
+    print('lets play hangman')
     print("Player 1: Enter the word to be guessed (No peeking, Player 2!).")
     secret_word = input("Enter the secret word: ").lower().strip()
     while not secret_word.isalpha():

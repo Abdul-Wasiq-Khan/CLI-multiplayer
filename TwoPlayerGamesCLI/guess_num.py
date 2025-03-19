@@ -1,5 +1,4 @@
 import random
-import keyboard
 import os
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -41,10 +40,14 @@ def main_game(info_func=description):
         print("invalid format! type again")
         main_game(pass_func)
     number = random.randint(min_range,max_range)
+    print('''Lets start! player1 you are up
+          ssh.. player2 no peeking!
+          ''')
     player1_tries=game(number,min_range,max_range)
     if mode == 'd':
         number = random.randint(min_range,max_range)
     clear_screen()
+    print('Player 2 come up now. prove us you are better than player 1')
     player2_tries=game(number,min_range,max_range)
 
     if player1_tries > player2_tries:
