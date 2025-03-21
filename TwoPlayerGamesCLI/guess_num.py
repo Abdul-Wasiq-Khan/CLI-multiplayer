@@ -36,10 +36,11 @@ def main_game(info_func=description):
         mode = str(mode)
         min_range = int(min_range)
         max_range = int(max_range)
+        number = random.randint(min_range,max_range)
     except:
         print("invalid format! type again")
         main_game(pass_func)
-    number = random.randint(min_range,max_range)
+    
     print('''Lets start! player1 you are up
           ssh.. player2 no peeking!
           ''')

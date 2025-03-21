@@ -37,12 +37,13 @@ def scrambled_word_game():
     players = ['Player 1', 'Player 2']
     current_player = random.choice(players)
     other_player = [player for player in players if player != current_player][0]
-    
-    try:
-        base_timer = int(input("Enter the base timer in seconds: "))
-    except:
-        print('Error! pls type a numeric value')
-        base_timer = int(input("Enter the base timer in seconds: "))
+    while True:
+        try:
+            base_timer = int(input("Enter the base timer in seconds: "))
+            break
+        except:
+            print('Error! pls type a numeric value')
+ 
     
     clear_screen()
     print(f"{current_player} will enter the words.")

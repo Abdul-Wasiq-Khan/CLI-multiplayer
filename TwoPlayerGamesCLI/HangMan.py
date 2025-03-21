@@ -95,7 +95,7 @@ def hangman_game():
         print(f"Attempts left: {attempts}")
         print(f"Guessed letters: {', '.join(sorted(guessed_letters))}")
         
-        guess = input("Player 2, enter a letter: ").lower()
+        guess = input("Player 2, enter a letter: ").lower().strip()
 
         # Validate input
         if len(guess) != 1 or not guess.isalpha():
