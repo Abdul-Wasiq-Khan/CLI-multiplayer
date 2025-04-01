@@ -1,0 +1,10 @@
+version 2.0
+unscramble&word chain 
+    time reset for each player
+    time show
+player name storage data colloection
+
+Version 2.0"
+1. fixed connect 4 position error
+2. random player selction
+3. player name selection and storage

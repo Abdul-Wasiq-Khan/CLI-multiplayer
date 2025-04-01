@@ -15,11 +15,11 @@ This game does the following:
 3. Clears the screen, shuffles the sentences, and labels them 1, 2, and 3.
 4. Asks the other player to guess the number of the lie sentence.
 5. Checks if the guess is correct and awards points accordingly.
-6. Returns a tuple containing the points for each player.''')
+''')
 
 
-def game():
-    players = ['Player1', 'Player2']
+def game(_Player1='Player1',_Player2='Player2'):
+    players = [str(_Player1), str(_Player2)]
     sentence_player = random.choice(players)
     guess_player = [player for player in players if player != sentence_player][0]
     lie_sentence =''
@@ -52,17 +52,19 @@ def game():
 
     if sentences[guess-1] == lie_sentence:
         print(f"{guess_player} wins! {sentence_player} loses.")
-        if guess_player == 'Player1':
+        if guess_player == _Player1:
             return (2,0)
         else:
             return(0,2)
     else:
         print(f"{sentence_player} wins! {guess_player} loses.")
-        if guess_player == 'Player2':
+        if guess_player == _Player2:
             return (2,0)
         else:
             return(0,2)
+        
 
-#points = game()
-#print(f"Final points: Player 1 - {points[0]}, Player 2 - {points[1]}")
+if __name__ == "__main__":
+    points = game()
+    print(f"Final points: Player 1 - {points[0]}, Player 2 - {points[1]}")
 

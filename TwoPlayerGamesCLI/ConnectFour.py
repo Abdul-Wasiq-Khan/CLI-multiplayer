@@ -5,18 +5,18 @@ def print_board(board):
     os.system('cls' if os.name == 'nt' else 'clear')
     print(' 1 | 2 | 3 | 4 | 5 | 6 | 7')
     for row in board:
-        print(' | '.join(row))
+        print(' |'.join(row))
 
 def is_valid_move(board, column):
-    return board[0][column] == ' '
+    return board[0][column] == '⚫'
 
 def is_board_full(board):
-    return all(cell != ' ' for row in board for cell in row)
+    return all(cell != '⚫' for row in board for cell in row)
 
 
 def make_move(board, column, player):
     for row in range(5, -1, -1):
-        if board[row][column] == ' ':
+        if board[row][column] == '⚫':
             board[row][column] = '🔴' if player == 'Player 1' else '🔵'
             break
 
@@ -50,7 +50,7 @@ def play_game():
     current_player = random.choice(players)
     other_player = [player for player in players if player != current_player][0]
     points = [0, 0]
-    board = [[' ' for _ in range(7)] for _ in range(6)]
+    board = [['⚫' for _ in range(7)] for _ in range(6)]
 
     while True:
         print_board(board)
@@ -74,8 +74,6 @@ def play_game():
 
     return tuple(points)
 
-#points = play_game()
-#print(f"Final points: Player 1 - {points[0]}, Player 2 - {points[1]}")
 def description():
     print(
 '''
@@ -87,3 +85,8 @@ This game does the following:
 4. Checks if the current player has won.
 5. Switches the players and repeats the process until one player wins.
 6. Returns a tuple containing the points for each player.''')
+
+
+if __name__ == "__main__":
+    points = play_game()
+    print(f"Final points: Player 1 - {points[0]}, Player 2 - {points[1]}")

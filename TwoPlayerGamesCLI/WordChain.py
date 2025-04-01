@@ -40,8 +40,7 @@ def word_chain_game():
         last_letter = word[-1]
         print(f"\n{current_player}'s turn: Enter a word starting with '{last_letter}':")
 
-#points = word_chain_game()
-#print(f"Final points: Player 1 - {points[0]}, Player 2 - {points[1]}")
+
 def descripton():
     _b = '''
 This description does the following:
@@ -55,3 +54,6 @@ This description does the following:
 7. Asks the new current player to enter a word starting with the last letter of the previous word.
 8. Returns a tuple containing the points for each player.'''
     print(_b)
+if __name__ == "__main__":
+    points = word_chain_game()
+    print(f"Final points: Player 1 - {points[0]}, Player 2 - {points[1]}")

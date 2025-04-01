@@ -46,20 +46,26 @@ def scrambled_word_game():
  
     
     clear_screen()
-    print(f"{current_player} will enter the words.")
+    print(f"{current_player} will enter the word.")
 
     points = [0, 0]
     while True:
+        
         word = input(f"\n{current_player}, enter a word: ")
         scrambled_word = scramble_word(word)
 
         clear_screen()
+
+        timer = base_timer + (len(word) - 3) * 5
+        #print(f'Base timer = {base_timer} total = {timer}')
+
         print(f"\n{other_player}'s turn: Unscramble the word '{scrambled_word}':")
         start_time = time.time()
         answer = input("Enter your answer: ")
         end_time = time.time()
 
-        timer = base_timer + (len(word) - 3) * 5
+        
+        
         if end_time - start_time > timer:
             print(f"Time's up! {other_player} loses.")
             points[0 if current_player == 'Player 1' else 1] += 2
@@ -76,7 +82,8 @@ def scrambled_word_game():
 
     return tuple(points)
 
-#points = scrambled_word_game()
-#print(f"Final points: Player 1 - {points[0]}, Player 2 - {points[1]}")
+if __name__ == "__main__":
+    points = scrambled_word_game()
+    print(f"Final points: Player 1 - {points[0]}, Player 2 - {points[1]}")
 
     

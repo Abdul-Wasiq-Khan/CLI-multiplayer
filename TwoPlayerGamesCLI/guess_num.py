@@ -86,3 +86,7 @@ def game(number,min_range,max_range):
     else:
         print(f'you guessed it correcty ans:{number} | in {guess_counter} tries ')
         return guess_counter
+    
+if __name__ == '__main__':
+    main_game()
+

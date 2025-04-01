@@ -3,7 +3,7 @@ player2_points = []
 p1_total = 0
 p2_total =0
 games = []
-reactions = ["⚆_⚆", "🫡", "😊", "😁", "😀", "😎", "🤨", ";D", "(⓿_⓿)", "^_^", "><", "(^_^)", "⊙﹏⊙∥"]
+reactions = ["⚆_⚆", "🫡", "😊", "😁", "😀", "😎", "🤨", ";D", "(⓿_⓿)", "^_^", "><", "(^_^)", "⊙﹏⊙∥","😵"]
 from TwoPlayerGamesCLI import guess_num
 
 import os
@@ -54,6 +54,8 @@ game_name_dict={
    5 : 'WordChain',
    6 : 'Unscramble'
 }
+def taking_player_name():
+    ...
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -141,3 +143,5 @@ def main():
     output_marks()
     x = input('Press enter to leave')
 
+if __name__ == "__main__":
+    main()

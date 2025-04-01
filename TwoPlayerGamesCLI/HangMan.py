@@ -129,6 +129,6 @@ def hangman_game():
         print(f"Game over! The word was: {secret_word}")
         return (2, 0)  # Player 1 wins
 
-# Run the game
-#points = hangman_game()
-#print(f"\nFinal Points: Player 1 - {points[0]}, Player 2 - {points[1]}")
+if __name__ == "__main__":
+    points = hangman_game()
+    print(f"\nFinal Points: Player 1 - {points[0]}, Player 2 - {points[1]}")
