@@ -1,7 +1,7 @@
 string = '' 
 count = 0
 total = 0
-lenght = 20
+lenght = 10
 total = 2 ** lenght
 
 def int_binary(conv):
@@ -25,8 +25,18 @@ def int_binary(conv):
 
 for i in range(total + 1):
     bina =int_binary(i)
-    if 'ABBA' in bina:
+    if 'ABBBA' in bina:
         print(bina)
         count += 1
     ...
 print(count)
+items = ['<li>Apple</li>', '<li>Banana</li>', '<li>Cherry</li>']
+html = '\n'.join(items)
+print(html)
+
+li = []
+for i in range(10000,100000):
+    if i % 7 == 0:
+        li.append(i)
+
+print(li)

@@ -4,7 +4,9 @@ unscramble&word chain
     time show
 player name storage data colloection
 
-Version 2.0"
+Version 2.0" in \\\\IN DEVELOPMENT/// #5
 1. fixed connect 4 position error
 2. random player selction
-3. player name selection and storage
+3. quit in between
+4. Hangman added random player selection feature
+5. player name selection and storage

@@ -67,4 +67,5 @@ def game(_Player1='Player1',_Player2='Player2'):
 if __name__ == "__main__":
     points = game()
     print(f"Final points: Player 1 - {points[0]}, Player 2 - {points[1]}")
+    input("Press enter to leave")
 

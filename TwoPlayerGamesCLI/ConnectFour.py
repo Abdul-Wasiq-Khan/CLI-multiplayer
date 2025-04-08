@@ -2,10 +2,12 @@ import random
 import os
 
 def print_board(board):
+    
     os.system('cls' if os.name == 'nt' else 'clear')
-    print(' 1 | 2 | 3 | 4 | 5 | 6 | 7')
+
+    print('1 |2 |3 |4 |5 |6 |7')
     for row in board:
-        print(' |'.join(row))
+        print('|'.join(row))
 
 def is_valid_move(board, column):
     return board[0][column] == '⚫'
@@ -90,3 +92,4 @@ This game does the following:
 if __name__ == "__main__":
     points = play_game()
     print(f"Final points: Player 1 - {points[0]}, Player 2 - {points[1]}")
+    input("Press enter to leave")

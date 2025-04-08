@@ -31,10 +31,10 @@ def scramble_word(word):
     random.shuffle(scrambled_word)
     return ''.join(scrambled_word)
 
-def scrambled_word_game():
+def scrambled_word_game(_Player1='Player 1',_Player2='Player 2'):
     print(description)
     
-    players = ['Player 1', 'Player 2']
+    players = [str(_Player1),str(_Player2)]
     current_player = random.choice(players)
     other_player = [player for player in players if player != current_player][0]
     while True:
@@ -68,7 +68,7 @@ def scrambled_word_game():
         
         if end_time - start_time > timer:
             print(f"Time's up! {other_player} loses.")
-            points[0 if current_player == 'Player 1' else 1] += 2
+            points[0 if current_player == _Player1 else 1] += 2
             break
 
         if answer.lower() == word.lower():
@@ -77,7 +77,7 @@ def scrambled_word_game():
             base_timer *= 0.8  # Reduce the timer by 20% for each turn
         else:
             print(f"Incorrect. The correct answer is '{word}'.")
-            points[0 if current_player == 'Player 1' else 1] += 2
+            points[0 if current_player == _Player1 else 1] += 2
             break
 
     return tuple(points)
@@ -85,5 +85,6 @@ def scrambled_word_game():
 if __name__ == "__main__":
     points = scrambled_word_game()
     print(f"Final points: Player 1 - {points[0]}, Player 2 - {points[1]}")
+    input("Press enter to leave")
 
     

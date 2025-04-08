@@ -1,5 +1,5 @@
 import os
-
+import random
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -71,18 +71,25 @@ def display_hangman(attempts):
     ]
     return stages[attempts]
 
-def hangman_game():
-    # Player 1 provides the word
+def hangman_game(_Player1="Player1",_Player2="Player2"):
+
+    # Selecting players
+    players = [str(_Player1),str(_Player2)]
+    word_providing_player = random.choice(players)
+    word_guessing_player = players[1]
+    if word_guessing_player == word_providing_player:
+        word_guessing_player = players[0]
     clear_screen()
+
     print('lets play hangman')
-    print("Player 1: Enter the word to be guessed (No peeking, Player 2!).")
+    print(f"{word_providing_player}: Enter the word to be guessed (No peeking, {word_guessing_player}!).")
     secret_word = input("Enter the secret word: ").lower().strip()
     while not secret_word.isalpha():
         print("Invalid input. Please enter a valid word.")
         secret_word = input("Enter the secret word: ").lower().strip()
 
     clear_screen()
-    print("Word is set. Player 2, it's your turn to guess!")
+    print(f"Word is set. {word_guessing_player}, it's your turn to guess!")
 
     # Initialize game variables
     guessed_word = ['_'] * len(secret_word)
@@ -95,7 +102,7 @@ def hangman_game():
         print(f"Attempts left: {attempts}")
         print(f"Guessed letters: {', '.join(sorted(guessed_letters))}")
         
-        guess = input("Player 2, enter a letter: ").lower().strip()
+        guess = input(f"{word_guessing_player},pls enter a letter: ").lower().strip()
 
         # Validate input
         if len(guess) != 1 or not guess.isalpha():
@@ -122,13 +129,21 @@ def hangman_game():
         print(display_hangman(attempts))
 
     # Determine points and winner
+    
     if ''.join(guessed_word) == secret_word:
-        print(f"Congratulations Player 2! You guessed the word: {secret_word}")
-        return (0, 2)  # Player 2 wins
+        print(f"Congratulations {word_guessing_player}! You guessed the word: {secret_word}")
+        if word_guessing_player == _Player2:
+            return (0, 2)  # Player 2 wins
+        else:
+            return(2, 0)
     else:
         print(f"Game over! The word was: {secret_word}")
-        return (2, 0)  # Player 1 wins
+        if word_guessing_player == _Player2:
+            return (2, 0)  # Player 1 wins
+        else:
+            return(0, 2)
 
 if __name__ == "__main__":
     points = hangman_game()
     print(f"\nFinal Points: Player 1 - {points[0]}, Player 2 - {points[1]}")
+    input("Press enter to leave")

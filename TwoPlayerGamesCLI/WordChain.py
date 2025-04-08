@@ -57,3 +57,4 @@ This description does the following:
 if __name__ == "__main__":
     points = word_chain_game()
     print(f"Final points: Player 1 - {points[0]}, Player 2 - {points[1]}")
+    input("Press enter to leave")

@@ -89,4 +89,5 @@ def game(number,min_range,max_range):
     
 if __name__ == '__main__':
     main_game()
+    input("Press enter to leave")
 
